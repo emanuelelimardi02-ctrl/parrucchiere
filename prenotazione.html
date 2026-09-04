@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prenota Appuntamento | Lui Parrucchieri Uomo</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    /* Stili Base (Ereditati dalla Home) */
+    body {
+      background-color: #121212;
+      color: #f8f9fa;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    .text-accent { color: #d4af37; }
+    .btn-accent {
+      background-color: #d4af37;
+      color: #121212;
+      font-weight: bold;
+      border: none;
+    }
+    .btn-accent:hover {
+      background-color: #b5952f;
+      color: #121212;
+    }
+    .navbar-custom {
+      background-color: rgba(18, 18, 18, 0.95) !important;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Stili specifici per il modulo di prenotazione */
+    .booking-card {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    
+    /* Input Form Scuro */
+    .form-control, .form-select {
+      background-color: #2a2a2a;
+      border: 1px solid #444;
+      color: #fff;
+    }
+    .form-control:focus, .form-select:focus {
+      background-color: #333;
+      border-color: #d4af37;
+      color: #fff;
+      box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+    }
+
+    /* Pulsanti di selezione Barbiere */
+    .barber-btn {
+      border: 1px solid #444;
+      color: #aaa;
+      transition: all 0.2s ease;
+      background-color: #2a2a2a;
+    }
+    .btn-check:checked + .barber-btn {
+      background-color: #d4af37;
+      border-color: #d4af37;
+      color: #121212;
+    }
+    .btn-check:checked + .barber-btn i {
+      color: #121212 !important;
+    }
+
+    /* Pulsanti degli Orari */
+    .time-slot {
+      border: 1px solid #555;
+      color: #ccc;
+      width: calc(25% - 0.5rem);
+      padding: 10px 0;
+    }
+    .time-slot:hover, .btn-check:checked + .time-slot {
+      background-color: #d4af37;
+      border-color: #d4af37;
+      color: #121212;
+    }
+    .time-slot:disabled {
+      background-color: #1a1a1a;
+      border-color: #333;
+      color: #555;
+      text-decoration: line-through;
+    }
+
+    /* Mobile Responsive Time Slots */
+    @media (max-width: 576px) {
+      .time-slot { width: calc(33.33% - 0.5rem); }
+    }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- ================= NAV BAR ================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top border-bottom border-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-uppercase" href="index.html">
+        <span class="text-accent">Lui</span> Parrucchieri
+      </a>
+      <a href="index.html" class="btn btn-outline-light btn-sm ms-auto"><i class="bi bi-arrow-left me-2"></i>Torna alla Home</a>
+    </div>
+  </nav>
+
+  <!-- ================= SEZIONE PRENOTAZIONE ================= -->
+  <main class="flex-grow-1 py-5 d-flex align-items-center" style="background: radial-gradient(circle at top, #2a2a2a 0%, #121212 70%);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-10">
+          
+          <div class="booking-card rounded-4 p-4 p-md-5">
+            <h2 class="fw-bold mb-1 text-center">Prenota Appuntamento</h2>
+            <p class="text-secondary text-center mb-5">Scegli il servizio, il tuo professionista preferito e l'orario.</p>
+
+            <form action="#" method="POST">
+              
+              <!-- STEP 1: Servizio -->
+              <div class="mb-5">
+                <h5 class="fw-bold mb-3 text-accent"><i class="bi bi-1-circle me-2"></i>Scegli il Servizio</h5>
+                <select class="form-select form-select-lg py-3" required>
+                  <option value="" selected disabled>Seleziona dal listino...</option>
+                  <option value="taglio">Taglio Capelli Uomo - €20,00</option>
+                  <option value="taglio_barba">Taglio Capelli Uomo + Barba - €25,00</option>
+                  <option value="barba">Modellatura Barba - €10,00</option>
+                  <option value="bimbo">Taglio BIMBO (0 - 5 anni) - €15,00</option>
+                  <option value="skincare">Trattamento Skin Care - €25,00</option>
+                </select>
+              </div>
+
+              <!-- STEP 2: Barbiere -->
+              <!-- Scelta Barbiere con stile a bottoni -->
+              <div class="col-12 mt-4">
+                <label class="form-label text-secondary small mb-3">Con chi vuoi prenotare? *</label>
+                <div class="row g-3">
+                  <div class="col-6">
+                    <input type="radio" class="btn-check" name="barbiere" id="emanuele" value="emanuele" required>
+                    <label class="btn barber-btn w-100 py-3 rounded-2 text-center shadow-sm" for="emanuele">
+                      <i class="bi bi-person-circle fs-1 d-block mb-2 icon-barber text-secondary"></i>
+                      <span class="fw-bold fs-5">Emanuele</span>
+                    </label>
+                  </div>
+                  <div class="col-6">
+                    <input type="radio" class="btn-check" name="barbiere" id="luca" value="luca" required>
+                    <label class="btn barber-btn w-100 py-3 rounded-2 text-center shadow-sm" for="luca">
+                      <i class="bi bi-person-circle fs-1 d-block mb-2 icon-barber text-secondary"></i>
+                      <span class="fw-bold fs-5">Luca</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <br/>
+
+              <!-- STEP 3: Data e Ora -->
+              <div class="mb-5">
+                <h5 class="fw-bold mb-3 text-accent"><i class="bi bi-3-circle me-2"></i>Seleziona Data e Orario</h5>
+                <input type="date" class="form-control form-control-lg py-3 mb-4" required>
+                
+                <!-- Griglia Orari -->
+                <p class="text-secondary small mb-2">Orari disponibili per la data selezionata:</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <!-- Esempi di orari (i radio button permettono di selezionarne solo uno) -->
+                  <input type="radio" class="btn-check" name="orario" id="time1" value="09:00">
+                  <label class="btn time-slot rounded-2" for="time1">09:00</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time1" value="09:15">
+                  <label class="btn time-slot rounded-2" for="time1">09:15</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="09:30">
+                  <label class="btn time-slot rounded-2" for="time2">09:30</label>
+                  
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="09:45">
+                  <label class="btn time-slot rounded-2" for="time2">09:45</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time3" value="10:00" disabled>
+                  <label class="btn time-slot rounded-2" for="time3" title="Già prenotato">10:00</label>
+                  
+                  <input type="radio" class="btn-check" name="orario" id="time1" value="10:15">
+                  <label class="btn time-slot rounded-2" for="time1">10:15</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="10:30">
+                  <label class="btn time-slot rounded-2" for="time2">10:30</label>
+                  
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="10:40">
+                  <label class="btn time-slot rounded-2" for="time2">10:45</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time3" value="11:00" disabled>
+                  <label class="btn time-slot rounded-2" for="time3" title="Già prenotato">11:00</label>
+
+                                    <input type="radio" class="btn-check" name="orario" id="time1" value="11:15">
+                  <label class="btn time-slot rounded-2" for="time1">11:15</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="11:30">
+                  <label class="btn time-slot rounded-2" for="time2">11:30</label>
+                  
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="11:45">
+                  <label class="btn time-slot rounded-2" for="time2">11:45</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time3" value="12:00" disabled>
+                  <label class="btn time-slot rounded-2" for="time3" title="Già prenotato">12:00</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time1" value="12:15">
+                  <label class="btn time-slot rounded-2" for="time1">12:15</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="12:30">
+                  <label class="btn time-slot rounded-2" for="time2">12:30</label>
+                  
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="12:45">
+                  <label class="btn time-slot rounded-2" for="time2">12:45</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time3" value="13:00" disabled>
+                  <label class="btn time-slot rounded-2" for="time3" title="Già prenotato">13:00</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time1" value="13:15">
+                  <label class="btn time-slot rounded-2" for="time1">13:15</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="13:30">
+                  <label class="btn time-slot rounded-2" for="time2">13:30</label>
+                  
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="13:45">
+                  <label class="btn time-slot rounded-2" for="time2">13:45</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time3" value="14:00" disabled>
+                  <label class="btn time-slot rounded-2" for="time3" title="Già prenotato">14:00</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time1" value="14:15">
+                  <label class="btn time-slot rounded-2" for="time1">14:15</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="14:30">
+                  <label class="btn time-slot rounded-2" for="time2">14:30</label>
+                  
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="14:45">
+                  <label class="btn time-slot rounded-2" for="time2">14:45</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time3" value="15:00" disabled>
+                  <label class="btn time-slot rounded-2" for="time3" title="Già prenotato">15:00</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time1" value="15:15">
+                  <label class="btn time-slot rounded-2" for="time1">15:15</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="15:30">
+                  <label class="btn time-slot rounded-2" for="time2">15:30</label>
+                  
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="15:45">
+                  <label class="btn time-slot rounded-2" for="time2">15:45</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time3" value="16:00" disabled>
+                  <label class="btn time-slot rounded-2" for="time3" title="Già prenotato">16:00</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time1" value="16:15">
+                  <label class="btn time-slot rounded-2" for="time1">16:15</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="16:30">
+                  <label class="btn time-slot rounded-2" for="time2">16:30</label>
+                  
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="16:45">
+                  <label class="btn time-slot rounded-2" for="time2">16:45</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time3" value="17:00" disabled>
+                  <label class="btn time-slot rounded-2" for="time3" title="Già prenotato">17:00</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time1" value="17:15">
+                  <label class="btn time-slot rounded-2" for="time1">17:15</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="17:30">
+                  <label class="btn time-slot rounded-2" for="time2">17:30</label>
+                  
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="17:45">
+                  <label class="btn time-slot rounded-2" for="time2">17:45</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time3" value="18:00" disabled>
+                  <label class="btn time-slot rounded-2" for="time3" title="Già prenotato">18:00</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time1" value="18:15">
+                  <label class="btn time-slot rounded-2" for="time1">18:15</label>
+
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="18:30">
+                  <label class="btn time-slot rounded-2" for="time2">18:30</label>
+                  
+                  <input type="radio" class="btn-check" name="orario" id="time2" value="18:45">
+                  <label class="btn time-slot rounded-2" for="time2">18:45</label>
+
+                </div>
+              </div>
+
+              <!-- STEP 4: Dati Personali -->
+              <div class="mb-5">
+                <h5 class="fw-bold mb-3 text-accent"><i class="bi bi-4-circle me-2"></i>I tuoi Dati</h5>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control form-control-lg py-3" placeholder="Nome e Cognome" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="tel" class="form-control form-control-lg py-3" placeholder="Numero di Cellulare" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pulsante Conferma -->
+              <button type="submit" class="btn btn-accent w-100 py-3 fs-5 rounded-3 mt-2 shadow-lg">
+                Conferma Prenotazione <i class="bi bi-check2-circle ms-2"></i>
+              </button>
+              
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-4 text-center border-top border-dark" style="background-color: #0a0a0a;">
+    <p class="text-secondary small mb-0">&copy; 2026 Lui Parrucchieri Uomo. Via Toscana n.44, Latina.</p>
+  </footer>
+
+</body>
+</html>

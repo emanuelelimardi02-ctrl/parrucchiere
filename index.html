@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lui Parrucchieri Uomo | Barber Shop a Latina</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* Tema Barber Shop (Sfondo scuro, accenti dorati/bianchi) */
+        body {
+            background-color: #121212;
+            color: #f8f9fa;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .text-accent {
+            color: #d4af37;
+            /* Color oro per i dettagli */
+        }
+
+        .btn-accent {
+            background-color: #d4af37;
+            color: #121212;
+            font-weight: bold;
+            border: none;
+        }
+
+        .btn-accent:hover {
+            background-color: #b5952f;
+            color: #121212;
+        }
+
+        /* Hero Section con overlay scuro */
+        .hero-section {
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)),
+                url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            padding: 150px 0;
+        }
+
+        /* Stile delle Card Servizi */
+        .service-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        /* Sezione Depot */
+        .depot-section {
+            background-color: #1a1a1a;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        /* Navbar custom scura */
+        .navbar-custom {
+            background-color: rgba(18, 18, 18, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top border-bottom border-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="#">
+                <span class="text-accent">Lui</span> Parrucchieri
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#chi-siamo">Il Salone</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servizi">Servizi & Prezzi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#prodotti">Prodotti</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="C:\Users\emanuele.limardi\DOC\prenotazione.html" class="btn btn-accent rounded-1 px-4">Prenota
+                            Appuntamento</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="C:\Users\emanuele.limardi\DOC\admin.html">admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h6 class="text-accent text-uppercase tracking-wide mb-3">Barber Shop in Latina</h6>
+                    <h1 class="display-4 fw-bold mb-4">Dove il "Vecchio Stile" incontra le ultime tendenze.</h1>
+                    <p class="lead mb-5 text-light">Panni caldi, tagli tradizionali a forbice e sfumature moderne in un
+                        ambiente familiare e solare.</p>
+                    <a href="C:\Users\emanuele.limardi\DOC\prenotazione.html"
+                        class="btn btn-accent btn-lg px-5 py-3 rounded-1">Prenota il tuo posto</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!--    IMMAGINE LUCA ED EMANUELE   -->
+    <section id="chi-siamo" class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="C:\Users\emanuele.limardi\DOC\img\luiparrucchieri_home1.jpg"
+                        class="img-fluid rounded-2 shadow" alt="Luca ed Emanuele al lavoro">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h2 class="fw-bold mb-4">Luca ed Emanuele</h2>
+                    <p class="text-secondary fs-5">Lui Parrucchieri è nato con una missione: riportare nel settore uomo
+                        la vera essenza del Barber Shop.</p>
+                    <p class="text-secondary">Siamo giovani, simpatici, ma prima di tutto professionisti. Da noi
+                        troverai il classico trattamento barba con panno caldo, proprio come si faceva una volta, unito
+                        alla freschezza e alle tecniche di taglio e sfumatura più aggiornate.</p>
+                    <ul class="list-unstyled text-secondary mt-4">
+                        <li class="mb-2"><i class="bi bi-check2-circle text-accent me-2"></i> Tagli tradizionali a
+                            pettine e forbice</li>
+                        <li class="mb-2"><i class="bi bi-check2-circle text-accent me-2"></i> Sfumature moderne e hair
+                            styling</li>
+                        <li class="mb-2"><i class="bi bi-check2-circle text-accent me-2"></i> Ambiente solare e
+                            familiare</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--    SERVIZI     -->
+    <section id="servizi" class="py-5 bg-dark">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">I Nostri Servizi</h2>
+                <p class="text-secondary">Prenditi cura del tuo stile</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 service-card text-white text-center rounded-2 p-3">
+                        <div class="card-body">
+                            <i class="bi bi-scissors fs-1 text-accent mb-3 d-block"></i>
+                            <h4 class="card-title fw-bold">Hair</h4>
+                            <hr class="border-secondary mx-auto w-25">
+                            <div class="d-flex justify-content-between mb-2 mt-4">
+                                <span>Taglio Capelli</span>
+                                <span class="text-accent fw-bold">€20,00</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Taglio Bimbo (0-5 anni)</span>
+                                <span class="text-accent fw-bold">€15,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 service-card text-white text-center rounded-2 p-3">
+                        <div class="card-body">
+                            <i class="bi bi-droplet-half fs-1 text-accent mb-3 d-block"></i>
+                            <h4 class="card-title fw-bold">Beard</h4>
+                            <hr class="border-secondary mx-auto w-25">
+                            <div class="d-flex justify-content-between mb-2 mt-4">
+                                <span>Modellatura Barba</span>
+                                <span class="text-accent fw-bold">€10,00</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Taglio + Barba</span>
+                                <span class="text-accent fw-bold">€25,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 service-card text-white text-center rounded-2 p-3">
+                        <div class="card-body">
+                            <i class="bi bi-stars fs-1 text-accent mb-3 d-block"></i>
+                            <h4 class="card-title fw-bold">Care</h4>
+                            <hr class="border-secondary mx-auto w-25">
+                            <div class="d-flex justify-content-between mb-2 mt-4">
+                                <span>Trattamento Skin Care</span>
+                                <span class="text-accent fw-bold">€25,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--    PRODOTTI    -->
+    <section id="prodotti" class="py-5 depot-section">
+        <div class="container text-center py-3">
+
+            <h3 class="fw-bold mb-3">L'eccellenza per la tua pelle</h3>
+            <p class="text-secondary mx-auto w-75 mb-4">Raggiungiamo i massimi termini di professionalità e qualità
+                utilizzando esclusivamente il brand <strong>DEPOT</strong>. Prodotti italiani di altissima gamma,
+                realizzati con erbe naturali e confezionati con plastica riciclabile.</p>
+
+            <section id="galleria" class="py-5">
+                <div class="container py-4">
+                    <div class="row g-4">
+                        <!-- Foto 1 -->
+                        <div class="col-md-4">
+                            <div class="overflow-hidden rounded-2 shadow border border-dark">
+                                <img src="C:\Users\emanuele.limardi\DOC\img\depot1a.jpg" alt="Taglio sfumato moderno"
+                                    class="img-fluid w-100 gallery-img">
+                            </div>
+                        </div>
+
+                        <!-- Foto 2 -->
+                        <div class="col-md-4">
+                            <div class="overflow-hidden rounded-2 shadow border border-dark">
+                                <img src="C:\Users\emanuele.limardi\DOC\img\depot3a1.jpg" alt="Modellatura barba"
+                                    class="img-fluid w-100 gallery-img">
+                            </div>
+                        </div>
+
+                        <!-- Foto 3 -->
+                        <div class="col-md-4">
+                            <div class="overflow-hidden rounded-2 shadow border border-dark">
+                                <img src="C:\Users\emanuele.limardi\DOC\img\depot2a.jpg"
+                                    alt="Taglio tradizionale a forbice" class="img-fluid w-100 gallery-img">
+                            </div>
+                        </div>
+                    </div>
+                <br/>
+                <h2 class="text-light fw-bold tracking-widest">DEPOT</h2>
+                <p class="text-secondary small">THE MALE TOOLS & CO.</p>
+                </div>
+
+                <!-- ================= GALLERIA / I NOSTRI LAVORI ================= -->
+                <section id="galleria" class="py-5">
+                    <div class="container py-4">
+                        <div class="text-center mb-5">
+                            <h2 class="fw-bold">I Nostri Lavori</h2>
+                            <p class="text-secondary">Un'occhiata ad alcuni dei nostri ultimi tagli</p>
+                        </div>
+
+                        <div class="row g-4">
+                            <!-- Foto 1 -->
+                            <div class="col-md-4">
+                                <div class="overflow-hidden rounded-2 shadow border border-dark">
+                                    <img src="C:\Users\emanuele.limardi\DOC\img\img_home1.jpg"
+                                        alt="Taglio sfumato moderno" class="img-fluid w-100 gallery-img">
+                                </div>
+                            </div>
+
+                            <!-- Foto 2 -->
+                            <div class="col-md-4">
+                                <div class="overflow-hidden rounded-2 shadow border border-dark">
+                                    <img src="C:\Users\emanuele.limardi\DOC\img\img_home2.jpg" alt="Modellatura barba"
+                                        class="img-fluid w-100 gallery-img">
+                                </div>
+                            </div>
+
+                            <!-- Foto 3 -->
+                            <div class="col-md-4">
+                                <div class="overflow-hidden rounded-2 shadow border border-dark">
+                                    <img src="C:\Users\emanuele.limardi\DOC\img\img_home-3.jpg"
+                                        alt="Taglio tradizionale a forbice" class="img-fluid w-100 gallery-img">
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row g-4">
+                            
+                            <!-- Foto 1 -->
+                            <div class="col-md-4">
+                                <div class="overflow-hidden rounded-2 shadow border border-dark">
+                                    <img src="C:\Users\emanuele.limardi\DOC\img\img_home5.jpg"
+                                        alt="Taglio sfumato moderno" class="img-fluid w-100 gallery-img">
+                                </div>
+                            </div>
+
+                            <!-- Foto 2 -->
+                            <div class="col-md-4">
+                                <div class="overflow-hidden rounded-2 shadow border border-dark">
+                                    <img src="C:\Users\emanuele.limardi\DOC\img\img_home6.jpg" alt="Modellatura barba"
+                                        class="img-fluid w-100 gallery-img">
+                                </div>
+                            </div>
+
+                            <!-- Foto 3 -->
+                            <div class="col-md-4">
+                                <div class="overflow-hidden rounded-2 shadow border border-dark">
+                                    <img src="C:\Users\emanuele.limardi\DOC\img\img_home7.jpg"
+                                        alt="Taglio tradizionale a forbice" class="img-fluid w-100 gallery-img">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pulsante opzionale per Instagram -->
+                        <div class="text-center mt-5">
+                            <a href="#" class="btn btn-outline-light px-4 rounded-1"><i
+                                    class="bi bi-instagram me-2"></i>Seguici su Instagram</a>
+                        </div>
+                    </div>
+                </section>
+
+        </div>
+    </section>
+
+    <footer id="contatti" class="py-5" style="background-color: #0a0a0a;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 text-center text-md-start">
+                    <h4 class="fw-bold mb-4"><span class="text-accent">Lui</span> Parrucchieri Uomo</h4>
+                    <p class="text-secondary"><i class="bi bi-geo-alt-fill text-accent me-2"></i> Via Toscana n.44,
+                        04100 Latina</p>
+                    <p class="text-secondary"><i class="bi bi-telephone-fill text-accent me-2"></i> 338 2411070</p>
+                </div>
+
+                <div class="col-lg-4 col-md-6 text-center">
+                    <h5 class="fw-bold mb-4">Orari di Apertura</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><strong>Mar - Sab:</strong> 09:00 - 19:30</li>
+                        <li class="mb-2"><strong>Domenica e Lunedì:</strong> Chiuso</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12 text-center text-lg-end">
+                    <div class="mb-4">
+                        <a href="#" class="text-white me-3 text-decoration-none fs-4"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white text-decoration-none fs-4"><i class="bi bi-facebook"></i></a>
+                    </div>
+                    <p class="text-secondary small mb-0">&copy; 2026 Lui Parrucchieri Uomo di Pietrangeli Emanuele.</p>
+                    <p class="text-secondary small">P.Iva 03178900597</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
